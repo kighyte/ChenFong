@@ -13,23 +13,23 @@ public class LoginDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 
-		try {
-			con = DataConnect.getConnection();
-			ps = con.prepareStatement("Select uname, password from Users where uname = ? and password = ?");
-			ps.setString(1, user);
-			ps.setString(2, password);
+//		try {
+//			con = DataConnect.getConnection();
+//			ps = con.prepareStatement("Select uname, password from Users where uname = ? and password = ?");
+//			ps.setString(1, user);
+//			ps.setString(2, password);
+			
+//			ResultSet rs = ps.executeQuery();
 
-			ResultSet rs = ps.executeQuery();
-
-			if (rs.next()) {
+//			if (rs.next()) {
 				return true;
-			}
-		} catch (SQLException ex) {
-			System.out.println("Login error -->" + ex.getMessage());
-			return false;
-		} finally {
-			DataConnect.close(con);
-		}
-		return false;
+//			}
+//		} catch (SQLException ex) {
+//			System.out.println("Login error -->" + ex.getMessage());
+//			return false;
+//		} finally {
+//			DataConnect.close(con);
+//		}
+//		return false;
 	}
 }
